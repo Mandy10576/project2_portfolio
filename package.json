@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack Portfolio & Admin CMS Root Workspace",
+  "scripts": {
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "seed": "npm run seed --prefix backend",
+    "prisma:generate": "npm run prisma:generate --prefix backend"
+  }
+}

@@ -1,0 +1,95 @@
+// ==========================================
+// Prisma Schema Definition File
+// ==========================================
+// Prisma is an Object-Relational Mapper (ORM).
+// It allows us to write JavaScript/TypeScript code to interact with our 
+// PostgreSQL database without writing raw SQL queries manually.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ------------------------------------------
+// 1. User Model (Admin CMS Account)
+// ------------------------------------------
+model User {
+  id          String   @id @default(uuid())
+  email       String   @unique
+  password    String   // Hashed password using bcrypt
+  name        String
+  bio         String?  @db.Text
+  avatar      String?  // Image URL for profile picture
+  githubUrl   String?
+  linkedinUrl String?
+  twitterUrl  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ------------------------------------------
+// 2. Project Model (Portfolio Projects)
+// ------------------------------------------
+model Project {
+  id          String   @id @default(uuid())
+  title       String
+  description String   @db.Text
+  technologies String[] // Array of strings e.g. ["React", "Node.js", "PostgreSQL"]
+  githubUrl   String?
+  liveDemoUrl String?
+  image       String?  // URL of uploaded or hosted project preview image
+  featured    Boolean  @default(false)
+  createdDate DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ------------------------------------------
+// 3. Skill Model (Technical & Soft Skills)
+// ------------------------------------------
+model Skill {
+  id          String   @id @default(uuid())
+  name        String
+  category    String   // e.g. "Frontend", "Backend", "Database", "Tools"
+  proficiency Int      @default(80) // Skill percentage (0 - 100)
+  icon        String?  // Icon name or SVG/URL identifier
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ------------------------------------------
+// 4. Experience Model (Work History & Education)
+// ------------------------------------------
+model Experience {
+  id          String   @id @default(uuid())
+  role        String   // Job title e.g. "Full Stack Developer"
+  company     String   // Company/Organization name
+  location    String?  // Location or "Remote"
+  startDate   String   // e.g. "Jan 2023" or ISO date string
+  endDate     String?  // e.g. "Present" or "Dec 2024"
+  current     Boolean  @default(false) // Currently working here?
+  description String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ------------------------------------------
+// 5. About Model (CMS Profile & Statistics)
+// ------------------------------------------
+model About {
+  id                String   @id @default(uuid())
+  headline          String   // Catchy tagline e.g. "Building Web Products that Scale"
+  bio               String   @db.Text // Full introduction & story
+  experienceYears   Int      @default(3)
+  completedProjects Int      @default(15)
+  clientsCount      Int      @default(10)
+  location          String?  // e.g. "New York, USA" or "Remote"
+  email             String?
+  phone             String?
+  resumeUrl         String?  // Link to PDF resume
+  updatedAt         DateTime @updatedAt
+}

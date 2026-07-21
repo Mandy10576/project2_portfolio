@@ -10,7 +10,14 @@ import Footer from '../components/Footer';
 import api from '../services/api';
 
 const HomePage = () => {
-  const [about, setAbout] = useState(null);
+  const [about, setAbout] = useState({
+    name: 'Mandy',
+    headline: 'Full Stack Software Engineer & Web Developer',
+    bio: 'Passionate full-stack developer dedicated to building responsive, scalable, and high-performance web applications using modern web technologies like React, Node.js, Express, and PostgreSQL.',
+    email: 'mandeeprao10576@gmail.com',
+    phone: '+91 8141471878',
+    location: 'Surat, Gujarat',
+  });
   const [skills, setSkills] = useState([]);
   const [projects, setProjects] = useState([
     {

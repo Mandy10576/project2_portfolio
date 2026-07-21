@@ -43,9 +43,9 @@ async function main() {
         experienceYears: 4,
         completedProjects: 20,
         clientsCount: 12,
-        location: 'San Francisco, CA',
-        email: 'mandy@example.com',
-        phone: '+1 (555) 019-2834',
+        location: 'Surat, Gujarat',
+        email: 'mandeeprao10576@gmail.com',
+        phone: '+91 8141471878',
         resumeUrl: 'https://example.com/resume.pdf',
       },
     });

@@ -136,7 +136,7 @@ const AboutManager = () => {
               type="text"
               value={formData.location || ''}
               onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-              placeholder="San Francisco, CA"
+              placeholder="Surat, Gujarat"
               className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs"
             />
           </div>
@@ -147,7 +147,7 @@ const AboutManager = () => {
               type="email"
               value={formData.email || ''}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              placeholder="mandy@example.com"
+              placeholder="mandeeprao10576@gmail.com"
               className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs"
             />
           </div>
@@ -160,7 +160,7 @@ const AboutManager = () => {
               type="text"
               value={formData.phone || ''}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              placeholder="+1 (555) 019-2834"
+              placeholder="+91 8141471878"
               className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs"
             />
           </div>

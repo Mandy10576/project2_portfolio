@@ -40,8 +40,8 @@ const ContactSection = ({ about }) => {
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block font-medium">Direct Email</span>
-                    <a href={`mailto:${about?.email || 'mandy@example.com'}`} className="text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
-                      {about?.email || 'mandy@example.com'}
+                    <a href={`mailto:${about?.email || 'mandeeprao10576@gmail.com'}`} className="text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                      {about?.email || 'mandeeprao10576@gmail.com'}
                     </a>
                   </div>
                 </div>
@@ -52,9 +52,9 @@ const ContactSection = ({ about }) => {
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block font-medium">Phone Number</span>
-                    <span className="text-sm font-semibold text-white">
-                      {about?.phone || '+1 (555) 019-2834'}
-                    </span>
+                    <a href={`tel:${about?.phone || '+918141471878'}`} className="text-sm font-semibold text-white hover:text-indigo-400 transition-colors block">
+                      {about?.phone || '+91 8141471878'}
+                    </a>
                   </div>
                 </div>
 
@@ -65,7 +65,7 @@ const ContactSection = ({ about }) => {
                   <div>
                     <span className="text-xs text-slate-400 block font-medium">Current Location</span>
                     <span className="text-sm font-semibold text-white">
-                      {about?.location || 'San Francisco, CA'}
+                      {about?.location || 'Surat, Gujarat'}
                     </span>
                   </div>
                 </div>

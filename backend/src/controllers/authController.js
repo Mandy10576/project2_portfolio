@@ -29,9 +29,25 @@ export const login = async (req, res, next) => {
     }
 
     // 1. Find user by email
-    const user = await prisma.user.findUnique({ where: { email } });
+    let user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
+
+    // Auto-create default admin if database is not seeded yet
     if (!user) {
-      return next(new AppError('Invalid email or password', 401));
+      const totalUsers = await prisma.user.count();
+      const allowedEmails = ['admin@example.com', 'mandeeprao10576@gmail.com'];
+      if (totalUsers === 0 && allowedEmails.includes(email.toLowerCase())) {
+        const hashedPassword = await bcrypt.hash('admin123', 10);
+        user = await prisma.user.create({
+          data: {
+            email: email.toLowerCase(),
+            password: hashedPassword,
+            name: 'Mandy Developer',
+            bio: 'Full Stack Software Engineer',
+          },
+        });
+      } else {
+        return next(new AppError('Invalid email or password', 401));
+      }
     }
 
     // 2. Compare password hash

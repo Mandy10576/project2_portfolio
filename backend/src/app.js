@@ -24,6 +24,7 @@ const app = express();
 // 1. Enable CORS for Vercel Frontend & Localhost
 const allowedOrigins = [
   process.env.CLIENT_URL,
+  'https://project2-portfolio-navy.vercel.app',
   'http://localhost:5173',
   'http://localhost:3000',
 ].filter(Boolean);
@@ -31,8 +32,13 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps or curl) or if origin is allowed
-      if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+      // Allow requests with no origin or if origin is allowed or is vercel app
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        origin.endsWith('.vercel.app') ||
+        process.env.NODE_ENV !== 'production'
+      ) {
         callback(null, true);
       } else {
         callback(new Error(`CORS error: Origin ${origin} not allowed`));

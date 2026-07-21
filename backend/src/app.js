@@ -6,6 +6,7 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import fs from 'fs';
 
 // Import Route Handlers
 import authRoutes from './routes/authRoutes.js';
@@ -55,7 +56,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // 3. Serve Static Uploaded Files
-app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+const uploadsPath = path.join(process.cwd(), 'uploads');
+if (!fs.existsSync(uploadsPath)) {
+  fs.mkdirSync(uploadsPath, { recursive: true });
+}
+app.use('/uploads', express.static(uploadsPath));
 
 // 4. API Health Check Route
 app.get('/api/health', (req, res) => {

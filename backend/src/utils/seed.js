@@ -115,11 +115,11 @@ async function main() {
     await prisma.project.createMany({
       data: [
         {
-          title: 'E-Commerce Cloud Platform',
-          description: 'A scalable full-stack online marketplace with real-time inventory management, payment gateway integration, and admin dashboard analytics.',
-          technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
-          githubUrl: 'https://github.com/example/ecommerce-cloud',
-          liveDemoUrl: 'https://example-ecommerce.vercel.app',
+          title: 'AETHER E-Commerce Platform',
+          description: 'A full-stack e-commerce marketplace featuring secure JWT authentication, Razorpay payment gateway integration, Nodemailer OTP email verification, product catalog search/filters, and cart & order management. Powered by Neon PostgreSQL and hosted on Render.',
+          technologies: ['Node.js', 'Express', 'Neon PostgreSQL', 'Razorpay', 'JWT', 'Nodemailer', 'Render'],
+          githubUrl: 'https://github.com/Mandy10576/project',
+          liveDemoUrl: 'https://project-mandy.onrender.com',
           image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80',
           featured: true,
           createdDate: new Date('2024-03-15'),

@@ -12,7 +12,18 @@ import api from '../services/api';
 const HomePage = () => {
   const [about, setAbout] = useState(null);
   const [skills, setSkills] = useState([]);
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([
+    {
+      id: 'default-1',
+      title: 'AETHER E-Commerce Platform',
+      description: 'A full-stack e-commerce marketplace featuring secure JWT authentication, Razorpay payment gateway integration, Nodemailer OTP email verification, product catalog search/filters, and cart & order management. Powered by Neon PostgreSQL and hosted on Render.',
+      technologies: ['Node.js', 'Express', 'Neon PostgreSQL', 'Razorpay', 'JWT', 'Nodemailer', 'Render'],
+      githubUrl: 'https://github.com/Mandy10576/project',
+      liveDemoUrl: 'https://project-mandy.onrender.com',
+      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80',
+      featured: true,
+    }
+  ]);
   const [experiences, setExperiences] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,7 +40,9 @@ const HomePage = () => {
 
         if (aboutRes?.data?.data?.about) setAbout(aboutRes.data.data.about);
         if (skillRes?.data?.data?.skills) setSkills(skillRes.data.data.skills);
-        if (projectRes?.data?.data?.projects) setProjects(projectRes.data.data.projects);
+        if (projectRes?.data?.data?.projects && projectRes.data.data.projects.length > 0) {
+          setProjects(projectRes.data.data.projects);
+        }
         if (expRes?.data?.data?.experiences) setExperiences(expRes.data.data.experiences);
       } catch (error) {
         console.error('Error loading portfolio data:', error);

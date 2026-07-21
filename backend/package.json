@@ -10,7 +10,8 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
-    "seed": "node src/utils/seed.js"
+    "seed": "node src/utils/seed.js",
+    "vercel-build": "prisma generate"
   },
   "keywords": [
     "nodejs",

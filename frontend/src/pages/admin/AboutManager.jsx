@@ -147,7 +147,7 @@ const AboutManager = () => {
               type="email"
               value={formData.email || ''}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              placeholder="alex@example.com"
+              placeholder="mandy@example.com"
               className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs"
             />
           </div>

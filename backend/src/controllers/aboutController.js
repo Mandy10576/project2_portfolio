@@ -19,7 +19,7 @@ export const getAbout = async (req, res, next) => {
           completedProjects: 15,
           clientsCount: 10,
           location: 'San Francisco, CA',
-          email: 'alex@example.com',
+          email: 'mandy@example.com',
           phone: '+1 (555) 019-2834',
           resumeUrl: '#',
         },

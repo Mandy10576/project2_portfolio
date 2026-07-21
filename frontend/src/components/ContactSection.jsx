@@ -40,8 +40,8 @@ const ContactSection = ({ about }) => {
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block font-medium">Direct Email</span>
-                    <a href={`mailto:${about?.email || 'alex@example.com'}`} className="text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
-                      {about?.email || 'alex@example.com'}
+                    <a href={`mailto:${about?.email || 'mandy@example.com'}`} className="text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                      {about?.email || 'mandy@example.com'}
                     </a>
                   </div>
                 </div>

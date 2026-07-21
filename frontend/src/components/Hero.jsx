@@ -36,7 +36,7 @@ const Hero = ({ about }) => {
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
-          Hi, I'm <span className="gradient-text">{profile.name || 'Alex Developer'}</span>
+          Hi, I'm <span className="gradient-text">{profile.name || 'Mandy Developer'}</span>
         </h1>
 
         <p className="max-w-3xl mx-auto text-lg sm:text-xl font-medium text-slate-300 mb-8 leading-relaxed">

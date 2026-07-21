@@ -51,7 +51,7 @@ const Footer = ({ about }) => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-slate-900 text-center text-xs text-slate-400">
-          &copy; {new Date().getFullYear()} Alex Developer. All rights reserved. Powered by Admin CMS.
+          &copy; {new Date().getFullYear()} Mandy Developer. All rights reserved. Powered by Admin CMS.
         </div>
       </div>
     </footer>

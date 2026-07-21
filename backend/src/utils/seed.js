@@ -22,7 +22,7 @@ async function main() {
     create: {
       email: adminEmail,
       password: hashedPassword,
-      name: 'Alex Developer',
+      name: 'Mandy Developer',
       bio: 'Senior Full Stack Software Engineer specializing in React, Node.js, Express, and PostgreSQL.',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
       githubUrl: 'https://github.com',
@@ -44,7 +44,7 @@ async function main() {
         completedProjects: 20,
         clientsCount: 12,
         location: 'San Francisco, CA',
-        email: 'alex@example.com',
+        email: 'mandy@example.com',
         phone: '+1 (555) 019-2834',
         resumeUrl: 'https://example.com/resume.pdf',
       },

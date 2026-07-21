@@ -119,7 +119,7 @@ async function main() {
           description: 'A full-stack e-commerce marketplace featuring secure JWT authentication, Razorpay payment gateway integration, Nodemailer OTP email verification, product catalog search/filters, and cart & order management. Powered by Neon PostgreSQL and hosted on Render.',
           technologies: ['Node.js', 'Express', 'Neon PostgreSQL', 'Razorpay', 'JWT', 'Nodemailer', 'Render'],
           githubUrl: 'https://github.com/Mandy10576/project',
-          liveDemoUrl: 'https://project-mandy.onrender.com',
+          liveDemoUrl: 'https://project-9iqk.onrender.com',
           image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80',
           featured: true,
           createdDate: new Date('2024-03-15'),
